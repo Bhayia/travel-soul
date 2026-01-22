@@ -1,0 +1,7 @@
+{
+  "name": "Travel Soul - The Ultimate Backpacker Community",
+  "description": "A comprehensive travel platform for solo travelers and backpackers to find trip packages, connect with travel partners, and plan AI-powered itineraries.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
