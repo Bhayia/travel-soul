@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import { generateItinerary } from '../services/geminiService';
 import { db } from '../db';
 import { tripItineraries } from '../db/schema';
 import { AIPlanResponse } from '../types';
@@ -13,27 +12,7 @@ const AITripPlanner: React.FC = () => {
   const [result, setResult] = useState<AIPlanResponse | null>(null);
 
   const handleGenerate = async () => {
-    if (!destination) return;
-    setLoading(true);
-    try {
-      const plan = await generateItinerary(destination, days, vibe);
-      if (plan) {
-        setResult(plan);
-        // Save to Neon DB
-        await db.insert(tripItineraries).values({
-          destination,
-          days,
-          vibe,
-          itinerary: plan.itinerary,
-          estimatedBudget: plan.estimatedBudget,
-          essentialGear: plan.essentialGear,
-        });
-      }
-    } catch (error) {
-      console.error("Failed to generate or save itinerary:", error);
-    } finally {
-      setLoading(false);
-    }
+    alert("AI Trip Planner is currently disabled. Please contact support or check back later.");
   };
 
   return (
